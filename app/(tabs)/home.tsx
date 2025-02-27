@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
-import { useNavigation } from "expo-router";
+import { router, useNavigation } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -154,7 +154,7 @@ export default function HomeScreen() {
         {isExpanded && (
           <View className="flex flex-row justify-between">
             <TouchableOpacity
-              onPress={() => navigation.push("/logFood/database")}
+              onPress={() => router.push("/(logfood)/fooddbsearch")}
               className="bg-blue-500 rounded-lg py-4 flex-col items-center justify-center shadow-lg flex-1 mx-2"
             >
               <Ionicons name="search" size={24} color="white" />
@@ -162,7 +162,7 @@ export default function HomeScreen() {
             </TouchableOpacity>
 
             <TouchableOpacity
-              onPress={() => navigation.push("/logFood/barcode")}
+              onPress={() => router.push("/logFood/barcode")}
               className="bg-green-500 rounded-lg py-4 flex-col items-center justify-center shadow-lg flex-1 mx-2"
             >
               <Ionicons name="barcode" size={24} color="white" />
@@ -170,7 +170,7 @@ export default function HomeScreen() {
             </TouchableOpacity>
 
             <TouchableOpacity
-              onPress={() => navigation.push("/logFood/camera")}
+              onPress={() => router.push("/logFood/camera")}
               className="bg-purple-500 rounded-lg py-4 flex-col items-center justify-center shadow-lg flex-1 mx-2"
             >
               <Ionicons name="camera" size={24} color="white" />
