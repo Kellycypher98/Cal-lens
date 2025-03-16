@@ -158,23 +158,24 @@ export default function HomeScreen() {
               className="bg-blue-500 rounded-lg py-4 flex-col items-center justify-center shadow-lg flex-1 mx-2"
             >
               <Ionicons name="search" size={24} color="white" />
-              <Text className="text-white text-lg font-semibold">From Database</Text>
+              <Text className="text-white text-md font-semibold">From Database</Text>
             </TouchableOpacity>
 
+           
             <TouchableOpacity
-              onPress={() => router.push("/logFood/barcode")}
-              className="bg-green-500 rounded-lg py-4 flex-col items-center justify-center shadow-lg flex-1 mx-2"
-            >
-              <Ionicons name="barcode" size={24} color="white" />
-              <Text className="text-white text-lg font-semibold">Scan Barcode</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              onPress={() => router.push("/logFood/camera")}
+              onPress={() => router.push("/(logfood)/foodscanscreen")}
               className="bg-purple-500 rounded-lg py-4 flex-col items-center justify-center shadow-lg flex-1 mx-2"
             >
               <Ionicons name="camera" size={24} color="white" />
-              <Text className="text-white text-lg font-semibold">Scan Food</Text>
+              <Text className="text-white text-md  font-semibold">Scan Food or barcode</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={() => router.push("/(logfood)/productscreen")}
+              className="bg-purple-500 rounded-lg py-4 flex-col items-center justify-center shadow-lg flex-1 mx-2"
+            >
+              <Ionicons name="camera" size={24} color="white" />
+              <Text className="text-white text-md  font-semibold">temporal button</Text>
             </TouchableOpacity>
           </View>
         )}
