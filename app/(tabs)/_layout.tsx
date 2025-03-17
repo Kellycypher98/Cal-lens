@@ -5,10 +5,12 @@ import { Ionicons } from '@expo/vector-icons';
 export default function Layout() {
   return (
     <Tabs>
-      <Tabs.Screen 
+      <Tabs.Screen
+      
         name="home" 
         options={{ 
-          title: "Home", 
+          headerShown: false,
+          title: "", 
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home-outline" size={size} color={color} />
           ),
@@ -17,7 +19,8 @@ export default function Layout() {
       <Tabs.Screen 
         name="analytics" 
         options={{ 
-          title: "Analytics", 
+                headerShown: false,
+          title: "", 
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="bar-chart-outline" size={size} color={color} />
           ),
@@ -26,7 +29,8 @@ export default function Layout() {
       <Tabs.Screen 
         name="personalization" 
         options={{ 
-          title: "Profile", 
+            headerShown: false,
+          title: "", 
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="person-outline" size={size} color={color} />
           ),
