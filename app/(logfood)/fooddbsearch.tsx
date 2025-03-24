@@ -18,7 +18,7 @@ export default function AddFoodScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <View className="bg-emerald-500 pt-12 pb-4 px-6 rounded-b-3xl shadow-md">
+      <View className="bg-black pt-12 pb-10 px-6 rounded-b-3xl shadow-md">
         <Text className="text-2xl font-bold text-white mb-2">Add Food</Text>
         <Text className="text-white text-opacity-80">Search and add food to your daily log</Text>
       </View>
@@ -80,7 +80,7 @@ export default function AddFoodScreen() {
             {[1, 2, 3].map((i) => (
               <TouchableOpacity key={i} className="bg-white mb-3 rounded-xl p-4 flex-row items-center shadow-sm border border-gray-100">
                 <View className="h-12 w-12 bg-emerald-100 rounded-lg items-center justify-center mr-3">
-                  <Feather name="coffee" size={20} color="#059669" />
+                  <Feather name="coffee" size={20} color="#00000" />
                 </View>
                 <View className="flex-1">
                   <Text className="font-semibold text-gray-800 text-base">
@@ -90,7 +90,7 @@ export default function AddFoodScreen() {
                     {["150 cal | 1 cup", "165 cal | 100g", "45 cal | 1 bowl"][i-1]}
                   </Text>
                 </View>
-                <Feather name="plus-circle" size={24} color="#059669" />
+                <Feather name="plus-circle" size={24} color="#000000" />
               </TouchableOpacity>
             ))}
           </View>

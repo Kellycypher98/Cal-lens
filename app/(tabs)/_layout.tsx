@@ -4,13 +4,17 @@ import { Ionicons } from '@expo/vector-icons';
 
 export default function Layout() {
   return (
-    <Tabs>
+    <Tabs screenOptions={{
+      tabBarShowLabel: false,
+      tabBarStyle: {
+        borderTopWidth: 1,
+        borderTopColor: '#f1f1f1'
+      }
+    }}>
       <Tabs.Screen
-      
         name="home" 
         options={{ 
           headerShown: false,
-          title: "", 
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home-outline" size={size} color={color} />
           ),
@@ -19,18 +23,16 @@ export default function Layout() {
       <Tabs.Screen 
         name="analytics" 
         options={{ 
-                headerShown: false,
-          title: "", 
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="bar-chart-outline" size={size} color={color} />
+            <Ionicons name="analytics" size={size} color={color} />
           ),
         }}
       />
       <Tabs.Screen 
-        name="personalization" 
+        name="personalisation" 
         options={{ 
-            headerShown: false,
-          title: "", 
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="person-outline" size={size} color={color} />
           ),

@@ -151,10 +151,10 @@ export default function ProductScreen() {
       ) : nutrition ? (
         <ScrollView className="flex-1">
           {/* Header Image with Gradient Overlay */}
-          <View className="w-full h-64 relative">
+          <View className="w-full h-72 relative ">
             <Image 
               source={{ uri: nutrition.image }} 
-              className="w-full h-full"
+              className="w-full h-full rounded-lg"
               resizeMode="cover"
             />
             <LinearGradient
@@ -166,23 +166,23 @@ export default function ProductScreen() {
               style={{ backdropFilter: 'blur(10px)' }}
               onPress={() => router.back()}
             >
-              <MaterialIcons name="arrow-back" size={24} color="white" />
+              <MaterialIcons name="arrow-back" size={24} color="black" />
             </TouchableOpacity>
             <View className="absolute bottom-4 left-4 right-4">
-              <Text className="text-white text-3xl font-bold">{nutrition.label}</Text>
-              <View className="flex-row items-center mt-1">
+              <Text className="text-white text-3xl  backdrop-blur-lg font-bold">{nutrition.label}</Text>
+              <View className="flex-row items-center backdrop-blur-md mt-1">
                 <MaterialCommunityIcons 
                   name={scanMethod === "barcode" ? "barcode-scan" : "food"} 
                   size={16} 
                   color="white" 
                 />
-                <Text className="text-white ml-1 opacity-90">
+                <Text className="text-white   ml-1 opacity-90">
                   {scanMethod === "barcode" ? "Barcode Scan" : "Food Recognition"}
                 </Text>
               </View>
             </View>
           </View>
-
+ 
           {/* Main Content */}
           <View className="px-4 py-6">
             <Animated.View 
@@ -201,7 +201,7 @@ export default function ProductScreen() {
 
             {/* Calories Card */}
             <Animated.View 
-              className="bg-blue-50 p-5 rounded-2xl mb-6 shadow-sm"
+              className="bg-white p-5 rounded-2xl mb-6 shadow-sm"
               style={{ 
                 opacity: animateValue,
                 transform: [{ translateY: animateValue.interpolate({
@@ -212,12 +212,12 @@ export default function ProductScreen() {
             >
               <View className="flex-row items-center justify-between">
                 <View className="flex-row items-center">
-                  <FontAwesome6 name="fire" size={20} color="#3b82f6" />
-                  <Text className="text-gray-800 text-lg font-bold ml-2">Calories</Text>
+                  <FontAwesome6 name="fire" size={20} color="#000000  " />
+                  <Text className="text-black text-lg font-bold ml-2">Calories</Text>
                 </View>
-                <Text className="text-3xl font-bold text-blue-500">{nutrition.nutrients.ENERC_KCAL}</Text>
+                <Text className="text-3xl font-bold text-black">{nutrition.nutrients.ENERC_KCAL}</Text>
               </View>
-              <Text className="text-right text-gray-500">kcal per serving</Text>
+              <Text className="text-right text-black">kcal per serving</Text>
             </Animated.View>
 
             {/* Macronutrients Card */}
@@ -237,14 +237,14 @@ export default function ProductScreen() {
               <View className="mb-4">
                 <View className="flex-row justify-between items-center mb-1">
                   <View className="flex-row items-center">
-                    <MaterialCommunityIcons name="food-drumstick" size={18} color="#f59e0b" />
-                    <Text className="text-gray-700 ml-2">Protein</Text>
+                    <MaterialCommunityIcons name="food-drumstick" size={18} color="#000000" />
+                    <Text className="text-black ml-2">Protein</Text>
                   </View>
-                  <Text className="text-gray-700 font-medium">{nutrition.nutrients.PROCNT}g</Text>
+                  <Text className="text-bl font-medium">{nutrition.nutrients.PROCNT}g</Text>
                 </View>
                 <View className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
                   <View 
-                    className="h-full bg-yellow-500 rounded-full"
+                    className="h-full bg-black rounded-full"
                     style={{ width: calculateBarWidth('PROCNT') }}
                   />
                 </View>
@@ -254,14 +254,14 @@ export default function ProductScreen() {
               <View className="mb-4">
                 <View className="flex-row justify-between items-center mb-1">
                   <View className="flex-row items-center">
-                    <MaterialIcons name="grain" size={18} color="#10b981" />
-                    <Text className="text-gray-700 ml-2">Carbs</Text>
+                    <MaterialIcons name="grain" size={18} color="#000000" />
+                    <Text className="text-black ml-2">Carbs</Text>
                   </View>
-                  <Text className="text-gray-700 font-medium">{nutrition.nutrients.CHOCDF}g</Text>
+                  <Text className="text-black font-medium">{nutrition.nutrients.CHOCDF}g</Text>
                 </View>
                 <View className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
                   <View 
-                    className="h-full bg-green-500 rounded-full"
+                    className="h-full bg-black rounded-full"
                     style={{ width: calculateBarWidth('CHOCDF') }}
                   />
                 </View>
@@ -275,14 +275,14 @@ export default function ProductScreen() {
               <View>
                 <View className="flex-row justify-between items-center mb-1">
                   <View className="flex-row items-center">
-                    <MaterialCommunityIcons name="oil" size={18} color="#ef4444" />
-                    <Text className="text-gray-700 ml-2">Fat</Text>
+                    <MaterialCommunityIcons name="oil" size={18} color="#000000" />
+                    <Text className="text-black ml-2">Fat</Text>
                   </View>
                   <Text className="text-gray-700 font-medium">{nutrition.nutrients.FAT}g</Text>
                 </View>
                 <View className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
                   <View 
-                    className="h-full bg-red-500 rounded-full"
+                    className="h-full bg-black rounded-full"
                     style={{ width: calculateBarWidth('FAT') }}
                   />
                 </View>
@@ -300,7 +300,7 @@ export default function ProductScreen() {
               }}
             >
               <TouchableOpacity
-                className="bg-blue-500 p-4 rounded-xl w-full flex-row justify-center items-center mt-4"
+                className="bg-black p-4 rounded-xl w-full flex-row justify-center items-center mt-4"
                 activeOpacity={0.8}
                 onPress={handleLogFood}
               >
@@ -318,7 +318,7 @@ export default function ProductScreen() {
           <Text className="text-center text-xl font-medium text-gray-700 mt-4">No Data Available</Text>
           <Text className="text-center text-gray-500 mt-2">We couldn't find nutrition information for this item.</Text>
           <TouchableOpacity
-            className="mt-6 bg-blue-500 py-3 px-6 rounded-lg"
+            className="mt-6 bg-black py-3 px-6 rounded-lg"
             onPress={() => router.back()}
           >
             <Text className="text-white font-medium">Go Back</Text>

@@ -140,13 +140,13 @@ export default function HomeScreen() {
 
   const WaterTracker = () => {
     return (
-      <View className="bg-gray-500 p-4 rounded-xl mt-4">
+      <View className="bg-white border border-gray-100 shadow-sm p-4 rounded-xl mt-4">
         <View className="flex-row justify-between items-center">
           <View className="flex-row items-center">
-            <MaterialCommunityIcons name="water" size={22} color="#ffffff" />
-            <Text className="text-white font-semibold ml-2">Water Intake</Text>
+            <MaterialCommunityIcons name="water" size={22} color="#000000" />
+            <Text className="text-black font-semibold ml-2">Water Intake</Text>
           </View>
-          <Text className="text-white font-bold">{waterAmount}/8 cups</Text>
+          <Text className="text-black font-bold">{waterAmount}/8 cups</Text>
         </View>
         
         <View className="flex-row justify-between mt-3">
@@ -159,7 +159,7 @@ export default function HomeScreen() {
               <MaterialCommunityIcons 
                 name="cup" 
                 size={24} 
-                color={index < waterAmount ? "#000000" : "#CBD5E1"} 
+                color={index < waterAmount ? "#000000" : "#c4c8ff"} 
               />
             </TouchableOpacity>
           ))}
@@ -177,13 +177,13 @@ export default function HomeScreen() {
         onPress={() => meal.foods.length > 0 && router.push("/(logfood)/mealdetail")}
       >
         <View className="w-10 h-10 rounded-full bg-gray-100 items-center justify-center mr-3">
-          <Ionicons name={meal.icon} size={20} color="gray" />
+          <Ionicons name={meal.icon} size={20} color="black" />
         </View>
         
-        <View className="flex-1">
+        <View className="flex-1 ">
           <View className="flex-row justify-between">
             <Text className="font-medium text-gray-800">{meal.name}</Text>
-            <Text className="text-gray-500 text-sm">{meal.time}</Text>
+            <Text className="text-gray-500 text-sm ">{meal.time}</Text>
           </View>
           
           {meal.foods.length > 0 ? (
@@ -432,10 +432,10 @@ export default function HomeScreen() {
                   route: "/(logfood)/foodscanscreen"
                 },
                 {
-                  title: "Quick Add Calories", 
+                  title: "product screen jump", 
                   icon: "flash",
                   color: "#F59E0B",
-                  route: "/(logfood)/quickadd"
+                  route: "/(logfood)/productscreen"
                 }
               ].map((item, index) => (
                 <TouchableOpacity

@@ -19,7 +19,7 @@ export default function AnalyticsScreen() {
     labels: ["Jan 1", "Jan 5", "Jan 10", "Jan 15", "Jan 20", "Jan 25", "Jan 30"],
     datasets: [{
       data: [75, 74.5, 74, 73.5, 73, 72.8, 72.5],
-      color: (opacity = 1) => `rgba(59, 130, 246, ${opacity})`, // blue shade
+      color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`, // black shade
       strokeWidth: 2
     }]
   };
@@ -35,21 +35,21 @@ export default function AnalyticsScreen() {
     {
       name: "Protein",
       value: 30,
-      color: "#4169E1",
+      color: "#000000",
       legendFontColor: "#7F7F7F",
       legendFontSize: 12
     },
     {
       name: "Carbs",
       value: 45,
-      color: "#50C878",
+      color: "#333333",
       legendFontColor: "#7F7F7F",
       legendFontSize: 12
     },
     {
       name: "Fat",
       value: 25,
-      color: "#FF6347",
+      color: "#666666",
       legendFontColor: "#7F7F7F",
       legendFontSize: 12
     }
@@ -80,7 +80,7 @@ export default function AnalyticsScreen() {
         <TouchableOpacity
           key={timeFrame}
           className={`px-4 py-2 rounded-full ${
-            activeTimeFrame === timeFrame ? "bg-blue-500" : "bg-transparent"
+            activeTimeFrame === timeFrame ? "bg-black" : "bg-transparent"
           }`}
           onPress={() => setActiveTimeFrame(timeFrame)}
         >
@@ -106,8 +106,8 @@ export default function AnalyticsScreen() {
         </View>
         {change && (
           <View className={`flex-row items-center px-2 py-1 rounded-full ${positive ? 'bg-green-100' : 'bg-red-100'}`}>
-            <Ionicons name={positive ? "trending-up" : "trending-down"} size={12} color={positive ? "#10b981" : "#ef4444"} />
-            <Text className={`text-xs ml-1 ${positive ? 'text-green-600' : 'text-red-600'}`}>{change}%</Text>
+            <Ionicons name={positive ? "trending-up" : "trending-down"} size={12} color={positive ? "#000000" : "#ef4444"} />
+            <Text className={`text-xs ml-1 ${positive ? 'text-black' : 'text-red-600'}`}>{change}%</Text>
           </View>
         )}
       </View>
@@ -133,8 +133,8 @@ export default function AnalyticsScreen() {
             title="Daily Average" 
             value="1,950" 
             unit="cal" 
-            icon={<MaterialCommunityIcons name="fire" size={18} color="#f97316" />}
-            color="#f97316" 
+            icon={<MaterialCommunityIcons name="fire" size={18} color="#000000" />}
+            color="#000000" 
             change="3.2" 
             positive={true}
           />
@@ -142,8 +142,8 @@ export default function AnalyticsScreen() {
             title="Current Weight" 
             value="72.5" 
             unit="kg" 
-            icon={<MaterialCommunityIcons name="scale-bathroom" size={18} color="#3b82f6" />}
-            color="#3b82f6" 
+            icon={<MaterialCommunityIcons name="scale-bathroom" size={18} color="#000000" />}
+            color="#000000" 
             change="2.5" 
             positive={true}
           />
@@ -153,9 +153,7 @@ export default function AnalyticsScreen() {
         <View className="mb-6">
           <View className="flex-row justify-between items-center mb-2">
             <Text className="text-lg font-semibold">Weight Progress</Text>
-            <TouchableOpacity>
-              <Text className="text-blue-500 text-sm">Details</Text>
-            </TouchableOpacity>
+       
           </View>
           <View className="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
             <LineChart
@@ -164,7 +162,7 @@ export default function AnalyticsScreen() {
               height={220}
               chartConfig={{
                 ...chartConfig,
-                color: (opacity = 1) => `rgba(59, 130, 246, ${opacity})`,
+                color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
               }}
               bezier
               style={{
@@ -184,9 +182,7 @@ export default function AnalyticsScreen() {
         <View className="mb-6">
           <View className="flex-row justify-between items-center mb-2">
             <Text className="text-lg font-semibold">Calorie Intake</Text>
-            <TouchableOpacity>
-              <Text className="text-blue-500 text-sm">Details</Text>
-            </TouchableOpacity>
+            
           </View>
           <View className="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
             <BarChart
@@ -195,9 +191,9 @@ export default function AnalyticsScreen() {
               height={220}
               chartConfig={{
                 ...chartConfig,
-                color: (opacity = 1) => `rgba(249, 115, 22, ${opacity})`,
+                color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
                 fillShadowGradientOpacity: 1,
-                fillShadowGradient: "#f97316",
+                fillShadowGradient: "#000000",
               }}
               style={{
                 borderRadius: 16
@@ -228,9 +224,7 @@ export default function AnalyticsScreen() {
         <View className="mb-6">
           <View className="flex-row justify-between items-center mb-2">
             <Text className="text-lg font-semibold">Macronutrient Distribution</Text>
-            <TouchableOpacity>
-              <Text className="text-blue-500 text-sm">Details</Text>
-            </TouchableOpacity>
+          
           </View>
           <View className="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
             <PieChart
@@ -250,9 +244,7 @@ export default function AnalyticsScreen() {
         <View className="mb-12">
           <View className="flex-row justify-between items-center mb-2">
             <Text className="text-lg font-semibold">Exercise Activity</Text>
-            <TouchableOpacity>
-              <Text className="text-blue-500 text-sm">Details</Text>
-            </TouchableOpacity>
+           
           </View>
           <View className="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
             <BarChart
@@ -261,9 +253,9 @@ export default function AnalyticsScreen() {
               height={220}
               chartConfig={{
                 ...chartConfig,
-                color: (opacity = 1) => `rgba(16, 185, 129, ${opacity})`,
+                color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
                 fillShadowGradientOpacity: 1,
-                fillShadowGradient: "#10b981",
+                fillShadowGradient: "#000000",
               }}
               style={{
                 borderRadius: 16

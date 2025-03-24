@@ -18,7 +18,7 @@ export default function BMIPicker() {
   const kg = Array.from({ length: 171 }, (_, i) => (i + 30).toString()); // 30kg to 200kg
 
   return (
-    <SafeAreaView className=" flex-1 bg-white p-6">
+    <View>
       {/* Title */}
       <Text className="text-2xl font-bold mt-4">Height & Weight</Text>
       <Text className="text-gray-500 mb-8">This will be used to calibrate your custom plan.</Text>
@@ -43,16 +43,16 @@ export default function BMIPicker() {
       </View>
 
       {/* Pickers - Side by Side Layout */}
-      <View className="flex-row  items-center mt-6 bg-gray-100 rounded-2xl p-4">
+      <View className="flex-row  items-center mt-6  rounded-2xl p-4">
         {/* Height Picker */}
         <View className="flex-row space-x-2">
           {!isMetric ? (
             <>
               {/* Feet Picker */}
-              <View className="bg-white rounded-xl shadow-sm px-2">
+              <View className="bg-white rounded-xl  px-2">
                 <WheelPickerExpo
                   height={150}
-                  width={80}
+                  width={100}
                   items={feet.map((item) => ({ label: `${item} ft`, value: item }))}
                   selected={heightFt}
                   onChange={(val) => setHeightFt(val)}
@@ -60,10 +60,10 @@ export default function BMIPicker() {
                 />
               </View>
               {/* Inches Picker */}
-              <View className="bg-white rounded-xl shadow-sm px-2">
+              <View className="bg-white rounded-xl  px-2">
                 <WheelPickerExpo
                   height={150}
-                  width={80}
+                  width={100}
                   items={inches.map((item) => ({ label: `${item} in`, value: item }))}
                   selected={heightIn}
                   onChange={(val) => setHeightIn(val)}
@@ -72,7 +72,7 @@ export default function BMIPicker() {
               </View>
             </>
           ) : (
-            <View className="bg-white rounded-xl shadow-sm px-4">
+            <View className="bg-white rounded-xl  px-4">
               <WheelPickerExpo
                 height={150}
                 width={100}
@@ -86,7 +86,7 @@ export default function BMIPicker() {
         </View>
 
         {/* Weight Picker */}
-        <View className="bg-white rounded-xl shadow-sm px-4">
+        <View className="bg-white rounded-xl  px-4">
           <WheelPickerExpo
             height={150}
             width={100}
@@ -98,13 +98,8 @@ export default function BMIPicker() {
         </View>
       </View>
 
-      {/* Next Button */}
-      <TouchableOpacity 
-        className="bg-black rounded-full py-4 mt-8 shadow-lg" 
-        onPress={() => navigation.push("/nextScreen")}
-      >
-        <Text className="text-white text-center text-lg font-semibold">Next</Text>
-      </TouchableOpacity>
-    </SafeAreaView>
+     
+     
+    </View>
   );
 }
