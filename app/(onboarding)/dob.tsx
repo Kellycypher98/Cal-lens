@@ -15,9 +15,9 @@ export default function DOBScreen() {
                 </View>
                 <TouchableOpacity 
                     className="bg-black px-6 py-4 rounded-2xl mt-8 items-center"
-                    onPress={() => router.push('/(onboarding)/heightandweight')}
+                    onPress={() => router.push('/(onboarding)/gender')}
                 >
-                    <Text className="text-white font-semibold text-lg">Continue</Text>
+                    <Text className="text-white font-semibold text-lg">Next</Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>

@@ -12,7 +12,7 @@ export default function ActivityScreen() {
   const handleContinue = () => {
     if (selectedActivity) {
       setUserData({ activityLevel: selectedActivity });
-      router.push('/(onboarding)/summary');
+      router.push('/(onboarding)/goal');
     }
   };
 
